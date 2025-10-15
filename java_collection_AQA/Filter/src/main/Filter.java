@@ -1,4 +1,6 @@
 package main;
 
-public interface Filter {
+/** Интерфейс Filter с параметризованным методом apply */
+interface Filter<T> {
+    T apply(T o);
 }
