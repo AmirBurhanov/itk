@@ -1,0 +1,48 @@
+### Time API Тесты
+
+### 1. Тестовый эндпоинт
+GET http://localhost:8080/api/time/test
+
+### 2. Сравнение дат (русская локаль)
+POST http://localhost:8080/api/time/compare
+Content-Type: application/json
+Accept-Language: ru
+
+{
+  "date1": "2024-01-01",
+  "date2": "2024-01-15"
+}
+
+### 3. Сравнение дат (английская локаль)
+POST http://localhost:8080/api/time/compare
+Content-Type: application/json
+Accept-Language: en
+
+{
+  "date1": "2024-03-01",
+  "date2": "2024-03-20"
+}
+
+### 4. Информация о текущей дате и времени (русская локаль)
+GET http://localhost:8080/api/time/datetime
+Accept-Language: ru
+
+### 5. Информация о текущей дате и времени (английская локаль)
+GET http://localhost:8080/api/time/datetime
+Accept-Language: en
+
+### 6. Форматированная дата (русский формат)
+GET http://localhost:8080/api/time/formatted?pattern=dd.MM.yyyy HH:mm:ss
+Accept-Language: ru
+
+### 7. Форматированная дата (английский формат)
+GET http://localhost:8080/api/time/formatted?pattern=MM/dd/yyyy hh:mm:ss a
+Accept-Language: en
+
+### 8. Информация о конкретной дате
+GET http://localhost:8080/api/time/info/2024-12-25
+Accept-Language: ru
+
+### 9. Дата через N дней
+GET http://localhost:8080/api/time/future/7
+Accept-Language: ru
